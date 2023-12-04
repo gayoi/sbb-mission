@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
-
 import com.mysite.sbbmission.answer.AnswerForm;
 import java.util.List;
 @RequestMapping("/question")
@@ -24,7 +23,7 @@ public class QuestionController {
     @GetMapping("/list")
     public String list(Model model) {
         List<Question> questionList = this.questionService.getList();
-        model.addAttribute("qusetonList", questionList);
+        model.addAttribute("questionList", questionList);
         return "question_list";
     }
     @GetMapping(value = "/detail/{id}")
